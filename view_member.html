@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 정보</title>
+</head>
+<body>
+    <h1>회원 정보</h1>
+    <ul>
+        <li>회원 ID: {{ member['id'] }}</li>
+        <li>이름: {{ member['name'] }}</li>
+        <li>생년월일: {{ member['dob'] }}</li>
+        <li>통신사: {{ member['carrier'] }}</li>
+        <li>휴대폰: {{ member['phone'] }}</li>
+        <li>은행명: {{ member['bank_name'] }}</li>
+        <li>계좌번호: {{ member['account'] }}</li>
+        <li>비고: {{ member['note'] }}</li>
+    </ul>
+    {% if member['image'] %}
+    <img src="{{ member['image'] }}" alt="회원 이미지" width="100">
+    {% endif %}
+    <br>
+    <a href="{{ url_for('index') }}">돌아가기</a>
+</body>
+</html>
